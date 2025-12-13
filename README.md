@@ -34,14 +34,18 @@ Recommending eligible colleges using historical cutoff data
 
 Providing an intuitive UI for decision-making
 
+
 🏗️ System Architecture
+
 ┌──────────────────┐        HTTP/JSON        ┌──────────────────────────┐
 │  Streamlit UI    │  ───────────────────▶  │   FastAPI Backend        │
 │  (Frontend)      │                        │  (ML + Business Logic)   │
 └──────────────────┘                        └──────────────────────────┘
                                                      │
                                                      ▼
+                                                     
                                             ML Model + College Dataset
+                                            
 
 Design Principles Used
 
@@ -139,23 +143,39 @@ Docker-friendly structure
 
 Stateless backend design
 
-📂 Project Structure
 kcet-ml-fullstack-predictor/
+
 │
+
 ├── backend/
+
 │   ├── backend.py              # FastAPI app
+
 │   ├── models/
+
 │   │   ├── model.pkl
+
 │   │   └── scale.pkl
+
 │   └── data/
+
 │       └── Colleges.xlsx
+
 │
+
 ├── frontend/
+
 │   └── frontend.py             # Streamlit UI (pure frontend)
+
 │
+
 ├── README.md
+
 ├── requirements.txt
+
 └── .gitignore
+
+
 
 ⚙️ Running the Project Locally
 1️⃣ Start Backend
