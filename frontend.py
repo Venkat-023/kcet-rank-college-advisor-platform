@@ -2,10 +2,8 @@ import streamlit as st
 import requests
 import pandas as pd
 
-# =============================
-# CONFIG
-# =============================
-BACKEND_URL = "http://127.0.0.1:8000"  # change if needed
+
+BACKEND_URL = "http://127.0.0.1:8000"  
 
 st.set_page_config(
     page_title="KCET Rank Predictor & College Finder",
@@ -13,9 +11,6 @@ st.set_page_config(
     layout="wide",
 )
 
-# =============================
-# CUSTOM CSS (UNCHANGED)
-# =============================
 st.markdown("""
 <style>
 .stApp {
