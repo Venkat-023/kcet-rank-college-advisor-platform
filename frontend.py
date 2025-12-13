@@ -41,9 +41,6 @@ button:hover {
 </style>
 """, unsafe_allow_html=True)
 
-# =============================
-# SESSION STATE
-# =============================
 if "stage" not in st.session_state:
     st.session_state.stage = 1
 if "predicted_rank" not in st.session_state:
@@ -51,9 +48,6 @@ if "predicted_rank" not in st.session_state:
 if "filters" not in st.session_state:
     st.session_state.filters = {}
 
-# =============================
-# LOAD FILTER OPTIONS FROM BACKEND
-# =============================
 @st.cache_data
 def load_filters():
     r = requests.get(f"{BACKEND_URL}/filters")
@@ -61,9 +55,6 @@ def load_filters():
 
 filters_data = load_filters()
 
-# =============================
-# STAGE 1: RANK PREDICTION
-# =============================
 if st.session_state.stage == 1:
     st.title("🎯 KCET Rank Predictor")
     st.markdown("Enter your marks to predict your KCET rank")
@@ -91,9 +82,7 @@ if st.session_state.stage == 1:
         else:
             st.error("Prediction failed. Backend error.")
 
-# =============================
-# STAGE 2: FILTER SELECTION
-# =============================
+
 elif st.session_state.stage == 2:
     st.title("🏫 College Finder - Set Your Preferences")
     st.info(f"Your Predicted Rank: **{st.session_state.predicted_rank}**")
@@ -116,9 +105,6 @@ elif st.session_state.stage == 2:
         }
         st.session_state.stage = 3
 
-# =============================
-# STAGE 3: SHOW COLLEGES
-# =============================
 elif st.session_state.stage == 3:
     st.title("📊 Eligible Colleges for You")
     st.info(f"Predicted Rank: **{st.session_state.predicted_rank}**")
