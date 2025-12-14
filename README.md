@@ -1,10 +1,10 @@
-🎓 KCET ML Full-Stack Predictor & College Recommendation Platform
+KCET ML Full-Stack Predictor & College Recommendation Platform
 
 An end-to-end, cloud-ready Machine Learning platform that predicts KCET ranks and recommends eligible engineering colleges using a scalable full-stack architecture.
 
 This project demonstrates real-world ML system design, clean frontend/backend separation, and production-ready engineering practices, built with the same architectural principles used in modern SaaS applications.
 
-🚀 Why This Project Stands Out
+Why This Project Stands Out
 
 ✅ End-to-End ML System — not just a notebook
 ✅ Clean Frontend–Backend Separation
@@ -16,7 +16,7 @@ This project demonstrates real-world ML system design, clean frontend/backend se
 This is not a toy project.
 It mirrors how ML products are built and deployed in industry.
 
-🧠 Problem Statement
+Problem Statement
 
 Students appearing for KCET (Karnataka Common Entrance Test) struggle to:
 
