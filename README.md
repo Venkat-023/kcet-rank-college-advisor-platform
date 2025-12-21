@@ -99,25 +99,45 @@ Tech Stack
 📁Project Structure
 
 kcet-rank-college-advisor-platform/
+
 │
+
 ├── Backend/
+
 │   ├── backend.py
+
 │   ├── Dockerfile
+
 │   ├── requirements.txt
+
 │   ├── models/
+
 │   │   ├── model.pkl
+
 │   │   └── scale.pkl
+
 │   ├── data/
+
 │   │   └── Colleges.xlsx
+
 │   └── utils/
+
 │       └── matches.py
+
 │
+
 ├── Frontend/
+
 │   ├── frontend.py
+
 │   ├── Dockerfile
+
 │   └── requirements.txt
+
 ├── docker-compose.yml
+
 ├── .gitignore
+
 └── README.md
 
 🔗 API Endpoints
@@ -147,14 +167,6 @@ This project is **fully Dockerized** with **independent frontend and backend con
 * Docker
 * Docker Compose
 
-### Start the application
-
-```bash
-docker compose up --build
-```
-
-
-## 🧪 Run Locally (Without Docker)
 
 ### Backend
 
