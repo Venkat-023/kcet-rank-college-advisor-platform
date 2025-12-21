@@ -5,14 +5,14 @@ import numpy as np
 from pydantic import BaseModel
 from utils.matches import matches_branch
 
-with open('C:\\Users\\admin\\Desktop\\Kcet Predictor\\models\\model.pkl','rb') as m:
+with open('C:\\Users\\admin\\Desktop\\Kcet Predictor\\Backend\\models\\model.pkl','rb') as m:
     model=pickle.load(m)
-with open('C:\\Users\\admin\\Desktop\\Kcet Predictor\\models\\scale.pkl','rb') as s:
+with open('C:\\Users\\admin\\Desktop\\Kcet Predictor\\Backend\\models\\scale.pkl','rb') as s:
     scaler=pickle.load(s)
 
 app=FastAPI(title='Kcet Rank Predictor')
 
-df_colleges=pd.read_excel('C:\\Users\\admin\\Desktop\\Kcet Predictor\\data\\Colleges.xlsx')
+df_colleges=pd.read_excel('C:\\Users\\admin\\Desktop\\Kcet Predictor\\Backend\\data\\Colleges.xlsx')
 df_colleges["GM"] = pd.to_numeric(df_colleges["GM"], errors="coerce").fillna(99999).astype(int)
 df_colleges.fillna("Not Available", inplace=True)
 
