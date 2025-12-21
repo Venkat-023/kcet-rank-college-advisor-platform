@@ -1,14 +1,14 @@
-#  KCET Rank Prediction & College Recommendation Platform
+# 🎓 KCET Rank Prediction & College Recommendation Platform
 
 An **end-to-end, production-ready Machine Learning full-stack application** that predicts **KCET ranks** and recommends **realistic engineering colleges** using historical cutoff data.
 
 This project mirrors how **real ML products are built, containerized, and deployed in industry**, not just how models are trained in notebooks.
 
-Problem Statement
+## Problem Statement
 
-Students appearing for KCET (Karnataka Common Entrance Test)** struggle to:
+Students appearing for **KCET (Karnataka Common Entrance Test)** struggle to:
 
-* Estimate their expected rank** from exam marks
+* Estimate their **expected rank** from exam marks
 * Identify **realistic college options**
 * Filter colleges by **branch, location, and type**
 
@@ -19,7 +19,7 @@ This platform solves these problems by:
 * Providing a simple, intuitive UI for decision-making
 
 
-Design Principles Used
+### Design Principles Used
 
 * Separation of Concerns
 * Stateless APIs
@@ -27,30 +27,31 @@ Design Principles Used
 * Scalable & Cloud-Friendly Architecture
 
 
-Machine Learning Pipeline
+##  Machine Learning Pipeline
 
-Features Used
+### Features Used
 
 * KCET score (normalized)
 * Board score (normalized)
 * Exam year
 * Total candidates appeared
 
-Pipeline
+### Pipeline
 
 1. Feature Engineering
 2. Standardization using `StandardScaler`
 3. Supervised Regression Model
 4. Post-prediction bias correction for real-world accuracy
 
-Output
+### Output
 
-Predicted KCET Rank**
+* **Predicted KCET Rank**
 
-The pipeline reflects real exam dynamics, not just raw regression output.
+> The pipeline reflects real exam dynamics, not just raw regression output.
 
 
-College Recommendation Engine
+
+## College Recommendation Engine
 
 * Uses **real historical cutoff data (GM category)**
 * Intelligent branch name matching (handles variations)
@@ -61,7 +62,9 @@ College Recommendation Engine
   * College type
 * Returns **only realistically achievable colleges**
 
-Tech Stack
+
+
+##  Tech Stack
 
 ### Backend
 
@@ -82,7 +85,7 @@ Tech Stack
 * Environment-agnostic paths
 * Stateless service design
 
-Project Structure
+##  Project Structure
 
 kcet-rank-college-advisor-platform/
 │
@@ -102,11 +105,15 @@ kcet-rank-college-advisor-platform/
 │   ├── frontend.py
 │   ├── Dockerfile
 │   └── requirements.txt
+│
 ├── docker-compose.yml
 ├── .gitignore
 └── README.md
+```
 
-API Endpoints
+
+
+## API Endpoints
 
 | Method | Endpoint          | Description           |
 | ------ | ----------------- | --------------------- |
@@ -115,7 +122,7 @@ API Endpoints
 | POST   | `/recommendation` | Get eligible colleges |
 
 
-## Dockerization
+##  Dockerization
 
 This project is **fully Dockerized** with **independent frontend and backend containers**.
 
@@ -126,6 +133,8 @@ This project is **fully Dockerized** with **independent frontend and backend con
 * Independent scaling
 * No “works on my machine” issues
 
+
+
 ##  Run the Project Using Docker
 
 ### Prerequisites
@@ -133,12 +142,23 @@ This project is **fully Dockerized** with **independent frontend and backend con
 * Docker
 * Docker Compose
 
+### Start the application
 
+```bash
+docker compose up --build
+```
+
+##  Run Locally (Without Docker)
+
+### Backend
+
+```bash
 cd Backend
 python -m venv myenv
 source myenv/bin/activate  # Windows: myenv\Scripts\activate
 pip install -r requirements.txt
 uvicorn backend:app --reload
+```
 
 ### Frontend
 
@@ -146,8 +166,10 @@ uvicorn backend:app --reload
 cd Frontend
 pip install -r requirements.txt
 streamlit run frontend.py
+```
 
-## ☁️ Cloud Deployment Strategy
+
+##  Cloud Deployment Strategy
 
 ### Backend
 
@@ -165,7 +187,7 @@ streamlit run frontend.py
 Frontend and backend can be **scaled independently**.
 
 
-Production Considerations
+## Production Considerations
 
 ✔ Stateless backend design
 ✔ Environment-based configuration
@@ -174,7 +196,7 @@ Production Considerations
 ✔ Minimal Docker images
 
 
-Future Enhancements
+##  Future Enhancements
 
 * Rank confidence intervals
 * Category-based cutoffs
@@ -182,12 +204,11 @@ Future Enhancements
 * Advanced ML models
 * CI/CD pipeline (GitHub Actions)
 
-
-What This Project Demonstrates
+##  What This Project Demonstrates
 
 ✔ Real-world ML deployment
 ✔ Full-stack system design
 ✔ API-driven architecture
 ✔ Docker & DevOps fundamentals
 ✔ Clean, maintainable codebase
-✔ Industry-ready engineering minds.
+✔ Industry-ready engineering mindset
