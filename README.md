@@ -1,155 +1,126 @@
-KCET ML Full-Stack Predictor & College Recommendation Platform
+# 🎓 KCET Rank Prediction & College Recommendation Platform
 
-An end-to-end, cloud-ready Machine Learning platform that predicts KCET ranks and recommends eligible engineering colleges using a scalable full-stack architecture.
+An **end-to-end, production-ready Machine Learning full-stack application** that predicts **KCET ranks** and recommends **realistic engineering colleges** using historical cutoff data.
 
-This project demonstrates real-world ML system design, clean frontend/backend separation, and production-ready engineering practices, built with the same architectural principles used in modern SaaS applications.
+This project mirrors how **real ML products are built, containerized, and deployed in industry**, not just how models are trained in notebooks.
 
-Why This Project Stands Out
+## 🚀 Why This Project Stands Out
 
-✅ End-to-End ML System — not just a notebook
-✅ Clean Frontend–Backend Separation
-✅ API-driven Architecture (FastAPI)
-✅ Cloud-Deployable & Scalable
-✅ Production-ready code structure
-✅ Real dataset & real admission logic
+✔ End-to-End ML System (Model → API → UI)
+✔ Clean Frontend–Backend Separation
+✔ API-Driven Architecture (FastAPI)
+✔ Real Admission Logic (Not Toy Data)
+✔ Dockerized & Cloud-Ready
+✔ Production-Grade Project Structure
 
-This is not a toy project.
-It mirrors how ML products are built and deployed in industry.
+> This is **not a demo project** — it reflects real-world ML system design and deployment practices.
 
-Problem Statement
+---
 
-Students appearing for KCET (Karnataka Common Entrance Test) struggle to:
+## 🧩 Problem Statement
 
-Estimate their rank from marks
+Students appearing for **KCET (Karnataka Common Entrance Test)** struggle to:
 
-Identify realistic college options
+* Estimate their **expected rank** from exam marks
+* Identify **realistic college options**
+* Filter colleges by **branch, location, and type**
 
-Filter colleges by branch, location, and type
+This platform solves these problems by:
 
-This platform solves the problem by:
-
-Predicting KCET rank using a trained ML model
-
-Recommending eligible colleges using historical cutoff data
-
-Providing an intuitive UI for decision-making
+* Predicting KCET rank using a trained ML model
+* Recommending eligible colleges using historical cutoff data
+* Providing a simple, intuitive UI for decision-making
 
 
 🏗️ System Architecture
 
-┌──────────────────┐        HTTP/JSON        ┌──────────────────────────┐
-│  Streamlit UI    │  ───────────────────▶  │   FastAPI Backend        │
-│  (Frontend)      │                        │  (ML + Business Logic)   │
-└──────────────────┘                        └──────────────────────────┘
-                                                     │
-                                                     ▼
-                                                     
-                                            ML Model + College Dataset
-                                            
 
-Design Principles Used
+┌──────────────────┐        HTTP / JSON        ┌──────────────────────────┐
+│  Streamlit UI    │ ───────────────────────▶ │  FastAPI Backend          │
+│  (Frontend)      │                          │  (ML + Business Logic)    │
+└──────────────────┘                          └──────────────────────────┘
+                                                       │
+                                                       ▼
+                                         ML Model + College Cutoff Dataset
+```
 
-Separation of Concerns
+### Design Principles Used
 
-Stateless APIs
+* Separation of Concerns
+* Stateless APIs
+* API-First Design
+* Scalable & Cloud-Friendly Architecture
 
-Single Source of Truth
+---
 
-Scalable & Cloud-friendly
+## 🧠 Machine Learning Pipeline
 
-🧪 Machine Learning Details
-Model Pipeline
+### Features Used
 
-Feature engineering from KCET + Board marks
+* KCET score (normalized)
+* Board score (normalized)
+* Exam year
+* Total candidates appeared
 
-Normalization using StandardScaler
+### Pipeline
 
-Supervised regression model
+1. Feature Engineering
+2. Standardization using `StandardScaler`
+3. Supervised Regression Model
+4. Post-prediction bias correction for real-world accuracy
 
-Post-prediction bias adjustment for real-world accuracy
+### Output
 
-Input Features
+* **Predicted KCET Rank**
 
-KCET score (normalized)
+> The pipeline reflects real exam dynamics, not just raw regression output.
 
-Board score (normalized)
 
-Exam year
+## 🎓 College Recommendation Engine
 
-Total candidates appeared
+* Uses **real historical cutoff data (GM category)**
+* Intelligent branch name matching (handles variations)
+* Filters supported:
 
-Output
+  * Branch
+  * Location
+  * College type
+* Returns **only realistically achievable colleges**
 
-Predicted KCET rank
+## 🛠️ Tech Stack
 
-Why This Matters
+### Backend
 
-This pipeline reflects real exam dynamics, not just raw regression.
+* Python 3.11
+* FastAPI
+* Pydantic
+* Scikit-learn
+* Pandas, NumPy
 
-🎓 College Recommendation Engine
+### Frontend
 
-Uses historical cutoff data (GM category)
+* Streamlit
+* Requests (API communication)
 
-Robust branch matching (handles naming variations)
+### DevOps & Deployment
 
-Supports filters:
+* Docker & Docker Compose
+* Environment-agnostic paths
+* Stateless service design
 
-Branch
+📁 Project Structure
 
-Location
-
-College type
-
-Returns only realistically achievable colleges
-
-🧩 Tech Stack
-Frontend
-
-Streamlit
-
-Pure UI layer (no ML or data logic)
-
-Backend
-
-FastAPI
-
-RESTful API design
-
-Pydantic validation
-
-Scikit-learn integration
-
-Machine Learning
-
-Python
-
-Scikit-learn
-
-Pandas
-
-NumPy
-
-Data
-
-Real KCET college cutoff dataset
-
-Cleaned and normalized
-
-Cloud & DevOps Ready
-
-Environment-agnostic paths
-
-Docker-friendly structure
-
-Stateless backend design
-
-kcet-ml-fullstack-predictor/
+kcet-rank-college-advisor-platform/
 
 │
 
-├── backend/
+├── Backend/
 
-│   ├── backend.py              # FastAPI app
+│   ├── backend.py
+
+│   ├── Dockerfile
+
+│   ├── requirements.txt
 
 │   ├── models/
 
@@ -157,105 +128,133 @@ kcet-ml-fullstack-predictor/
 
 │   │   └── scale.pkl
 
-│   └── data/
+│   ├── data/
 
-│       └── Colleges.xlsx
+│   │   └── Colleges.xlsx
 
-│
+│   └── utils/
 
-├── frontend/
-
-│   └── frontend.py             # Streamlit UI (pure frontend)
+│       └── matches.py
 
 │
 
-├── README.md
+├── Frontend/
 
-├── requirements.txt
+│   ├── frontend.py
 
-└── .gitignore
+│   ├── Dockerfile
 
+│   └── requirements.txt
 
+│
 
-⚙️ Running the Project Locally
-1️⃣ Start Backend
-uvicorn backend:app --reload
+├── docker-compose.yml
 
+├── .gitignore
 
-Backend runs at:
+└── README.md
 
-http://127.0.0.1:8000
-
-
-Swagger docs:
-
-http://127.0.0.1:8000/docs
-
-2️⃣ Start Frontend
-streamlit run frontend.py
-
-Frontend runs at:
-
-http://localhost:8501
 
 🔗 API Endpoints
 
-Method	Endpoint	Description
-POST	/predict	Predict KCET rank
-GET	/filters	Fetch filter options
-POST	/recommandation/	Get college recommendations
+| Method | Endpoint          | Description           |
+| ------ | ----------------- | --------------------- |
+| POST   | `/predict`        | Predict KCET rank     |
+| GET    | `/filters`        | Fetch filter options  |
+| POST   | `/recommendation` | Get eligible colleges |
 
-☁️ Cloud Deployment Strategy
+---
 
-This project is designed for independent deployment:
+## 🐳 Dockerization (Production-Ready)
 
-Backend
+This project is **fully Dockerized** with **independent frontend and backend containers**.
 
-Render
+### Why Docker?
 
-Railway
+* Consistent environments
+* Easy cloud deployment
+* Independent scaling
+* No “works on my machine” issues
 
-AWS EC2 / ECS
+---
 
-Docker container
+## ▶️ Run the Project Using Docker (Recommended)
 
-Frontend
+### Prerequisites
 
-Streamlit Cloud
+* Docker
+* Docker Compose
 
-Vercel (via API proxy)
+### Start the application
 
-Custom VM
+```bash
+docker compose up --build
+```
 
-Frontend and backend can scale independently.
 
-🔐 Production Considerations
+## 🧪 Run Locally (Without Docker)
 
-Environment-based configuration
+### Backend
 
-API validation with Pydantic
+```bash
+cd Backend
+python -m venv myenv
+source myenv/bin/activate  # Windows: myenv\Scripts\activate
+pip install -r requirements.txt
+uvicorn backend:app --reload
+```
 
-Stateless request handling
+### Frontend
 
-Clean error propagation
+```bash
+cd Frontend
+pip install -r requirements.txt
+streamlit run frontend.py
 
-🧪 What This Project Demonstrates
+## ☁️ Cloud Deployment Strategy
 
-✔ ML model integration into production
-✔ Full-stack application design
+### Backend
+
+* Render
+* Railway
+* AWS EC2 / ECS
+* Any Docker-based platform
+
+### Frontend
+
+* Streamlit Cloud
+* Vercel (via API proxy)
+* Docker container
+
+Frontend and backend can be **scaled independently**.
+
+---
+
+## 🔐 Production Considerations
+
+✔ Stateless backend design
+✔ Environment-based configuration
+✔ API validation using Pydantic
+✔ Clean error handling
+✔ Minimal Docker images
+
+---
+
+## 📈 Future Enhancements
+
+* Rank confidence intervals
+* Category-based cutoffs
+* Authentication & user profiles
+* Advanced ML models
+* CI/CD pipeline (GitHub Actions)
+
+---
+
+## 🏆 What This Project Demonstrates
+
+✔ Real-world ML deployment
+✔ Full-stack system design
 ✔ API-driven architecture
-✔ Data engineering fundamentals
-✔ Cloud-ready mindset
-✔ Real-world problem solving
-
-📈 Future Enhancements
-
-Rank confidence intervals
-
-Category-based cutoffs
-
-Authentication & user profiles
-
-Advanced ML models
-
-CI/CD pipeline
+✔ Docker & DevOps fundamentals
+✔ Clean, maintainable codebase
+✔ Industry-ready engineering minds.
