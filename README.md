@@ -168,8 +168,6 @@ This project is **fully Dockerized** with **independent frontend and backend con
 * Docker Compose
 
 
-### Backend
-
 ```bash
 cd Backend
 python -m venv myenv
