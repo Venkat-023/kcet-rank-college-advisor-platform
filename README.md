@@ -15,9 +15,8 @@ This project mirrors how **real ML products are built, containerized, and deploy
 
 > This is **not a demo project** — it reflects real-world ML system design and deployment practices.
 
----
 
-## 🧩 Problem Statement
+##  Problem Statement
 
 Students appearing for **KCET (Karnataka Common Entrance Test)** struggle to:
 
@@ -32,7 +31,7 @@ This platform solves these problems by:
 * Providing a simple, intuitive UI for decision-making
 
 
-🏗️ System Architecture
+##🏗️ System Architecture
 
 
 ┌──────────────────┐        HTTP / JSON        ┌──────────────────────────┐
@@ -53,7 +52,7 @@ This platform solves these problems by:
 
 ---
 
-## 🧠 Machine Learning Pipeline
+##  Machine Learning Pipeline
 
 ### Features Used
 
@@ -111,49 +110,26 @@ This platform solves these problems by:
 📁 Project Structure
 
 kcet-rank-college-advisor-platform/
-
 │
-
 ├── Backend/
-
 │   ├── backend.py
-
 │   ├── Dockerfile
-
 │   ├── requirements.txt
-
 │   ├── models/
-
 │   │   ├── model.pkl
-
 │   │   └── scale.pkl
-
 │   ├── data/
-
 │   │   └── Colleges.xlsx
-
 │   └── utils/
-
 │       └── matches.py
-
 │
-
 ├── Frontend/
-
 │   ├── frontend.py
-
 │   ├── Dockerfile
-
 │   └── requirements.txt
-
-│
-
 ├── docker-compose.yml
-
 ├── .gitignore
-
 └── README.md
-
 
 🔗 API Endpoints
 
@@ -163,7 +139,6 @@ kcet-rank-college-advisor-platform/
 | GET    | `/filters`        | Fetch filter options  |
 | POST   | `/recommendation` | Get eligible colleges |
 
----
 
 ## 🐳 Dockerization (Production-Ready)
 
@@ -175,8 +150,6 @@ This project is **fully Dockerized** with **independent frontend and backend con
 * Easy cloud deployment
 * Independent scaling
 * No “works on my machine” issues
-
----
 
 ## ▶️ Run the Project Using Docker (Recommended)
 
@@ -202,7 +175,6 @@ python -m venv myenv
 source myenv/bin/activate  # Windows: myenv\Scripts\activate
 pip install -r requirements.txt
 uvicorn backend:app --reload
-```
 
 ### Frontend
 
@@ -228,7 +200,6 @@ streamlit run frontend.py
 
 Frontend and backend can be **scaled independently**.
 
----
 
 ## 🔐 Production Considerations
 
@@ -238,7 +209,6 @@ Frontend and backend can be **scaled independently**.
 ✔ Clean error handling
 ✔ Minimal Docker images
 
----
 
 ## 📈 Future Enhancements
 
@@ -248,7 +218,6 @@ Frontend and backend can be **scaled independently**.
 * Advanced ML models
 * CI/CD pipeline (GitHub Actions)
 
----
 
 ## 🏆 What This Project Demonstrates
 
