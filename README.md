@@ -1,26 +1,28 @@
-# 🎓 KCET Rank Prediction & College Recommendation Platform
+#  KCET Rank Prediction & College Recommendation Platform
 
 An **end-to-end, production-ready Machine Learning full-stack application** that predicts **KCET ranks** and recommends **realistic engineering colleges** using historical cutoff data.
 
 This project mirrors how **real ML products are built, containerized, and deployed in industry**, not just how models are trained in notebooks.
 
-## 🚀 Why This Project Stands Out
+##  Why This Project Stands Out
 
 ✔ End-to-End ML System (Model → API → UI)
+
 ✔ Clean Frontend–Backend Separation
+
 ✔ API-Driven Architecture (FastAPI)
-✔ Real Admission Logic (Not Toy Data)
+
+✔ Real Admission Logic
+
 ✔ Dockerized & Cloud-Ready
+
 ✔ Production-Grade Project Structure
 
-> This is **not a demo project** — it reflects real-world ML system design and deployment practices.
+Problem Statement
 
+Students appearing for KCET (Karnataka Common Entrance Test)** struggle to:
 
-##  Problem Statement
-
-Students appearing for **KCET (Karnataka Common Entrance Test)** struggle to:
-
-* Estimate their **expected rank** from exam marks
+* Estimate their expected rank** from exam marks
 * Identify **realistic college options**
 * Filter colleges by **branch, location, and type**
 
@@ -31,51 +33,38 @@ This platform solves these problems by:
 * Providing a simple, intuitive UI for decision-making
 
 
-##🏗️ System Architecture
-
-
-┌──────────────────┐        HTTP / JSON        ┌──────────────────────────┐
-│  Streamlit UI    │ ───────────────────────▶ │  FastAPI Backend          │
-│  (Frontend)      │                          │  (ML + Business Logic)    │
-└──────────────────┘                          └──────────────────────────┘
-                                                       │
-                                                       ▼
-                                         ML Model + College Cutoff Dataset
-```
-
-### Design Principles Used
+Design Principles Used
 
 * Separation of Concerns
 * Stateless APIs
 * API-First Design
 * Scalable & Cloud-Friendly Architecture
 
----
 
-##  Machine Learning Pipeline
+Machine Learning Pipeline
 
-### Features Used
+Features Used
 
 * KCET score (normalized)
 * Board score (normalized)
 * Exam year
 * Total candidates appeared
 
-### Pipeline
+Pipeline
 
 1. Feature Engineering
 2. Standardization using `StandardScaler`
 3. Supervised Regression Model
 4. Post-prediction bias correction for real-world accuracy
 
-### Output
+Output
 
-* **Predicted KCET Rank**
+Predicted KCET Rank**
 
-> The pipeline reflects real exam dynamics, not just raw regression output.
+The pipeline reflects real exam dynamics, not just raw regression output.
 
 
-## 🎓 College Recommendation Engine
+College Recommendation Engine
 
 * Uses **real historical cutoff data (GM category)**
 * Intelligent branch name matching (handles variations)
@@ -86,7 +75,7 @@ This platform solves these problems by:
   * College type
 * Returns **only realistically achievable colleges**
 
-## 🛠️ Tech Stack
+Tech Stack
 
 ### Backend
 
@@ -107,7 +96,7 @@ This platform solves these problems by:
 * Environment-agnostic paths
 * Stateless service design
 
-📁 Project Structure
+📁Project Structure
 
 kcet-rank-college-advisor-platform/
 │
@@ -201,7 +190,7 @@ streamlit run frontend.py
 Frontend and backend can be **scaled independently**.
 
 
-## 🔐 Production Considerations
+##  Production Considerations
 
 ✔ Stateless backend design
 ✔ Environment-based configuration
@@ -210,7 +199,7 @@ Frontend and backend can be **scaled independently**.
 ✔ Minimal Docker images
 
 
-## 📈 Future Enhancements
+##  Future Enhancements
 
 * Rank confidence intervals
 * Category-based cutoffs
@@ -219,7 +208,7 @@ Frontend and backend can be **scaled independently**.
 * CI/CD pipeline (GitHub Actions)
 
 
-## 🏆 What This Project Demonstrates
+##  What This Project Demonstrates
 
 ✔ Real-world ML deployment
 ✔ Full-stack system design
