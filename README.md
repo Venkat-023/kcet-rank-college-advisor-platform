@@ -4,20 +4,6 @@ An end-to-end, production-ready Machine Learning full-stack application that pre
 
 This project mirrors how real ML products are built, containerized, and deployed in industry, not just how models are trained in notebooks.
 
-## Problem Statement
-
-Students appearing for **KCET (Karnataka Common Entrance Test)** struggle to:
-
-* Estimate their **expected rank** from exam marks
-* Identify **realistic college options**
-* Filter colleges by **branch, location, and type**
-
-This platform solves these problems by:
-
-* Predicting KCET rank using a trained ML model
-* Recommending eligible colleges using historical cutoff data
-* Providing a simple, intuitive UI for decision-making
-
 
 ### Design Principles Used
 
@@ -47,7 +33,7 @@ This platform solves these problems by:
 
 * **Predicted KCET Rank**
 
-> The pipeline reflects real exam dynamics, not just raw regression output.
+The pipeline reflects real exam dynamics, not just raw regression output.
 
 
 
