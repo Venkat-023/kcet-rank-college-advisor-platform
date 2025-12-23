@@ -75,27 +75,46 @@ The pipeline reflects real exam dynamics, not just raw regression output.
 
 kcet-rank-college-advisor-platform/
 │
+
 ├── Backend/
+
 │   ├── backend.py
+
 │   ├── Dockerfile
+
 │   ├── requirements.txt
+
 │   ├── models/
+
 │   │   ├── model.pkl
+
 │   │   └── scale.pkl
+
 │   ├── data/
+
 │   │   └── Colleges.xlsx
+
 │   └── utils/
+
 │       └── matches.py
+
 │
+
 ├── Frontend/
+
 │   ├── frontend.py
+
 │   ├── Dockerfile
+
 │   └── requirements.txt
+
 │
+
 ├── docker-compose.yml
+
 ├── .gitignore
+
 └── README.md
-```
 
 
 
@@ -144,7 +163,6 @@ python -m venv myenv
 source myenv/bin/activate  # Windows: myenv\Scripts\activate
 pip install -r requirements.txt
 uvicorn backend:app --reload
-```
 
 ### Frontend
 
