@@ -1,6 +1,6 @@
-# 🎓 KCET Rank Prediction & College Recommendation Platform
+#  KCET Rank Prediction & College Recommendation Platform
 
-An **end-to-end, production-ready Machine Learning full-stack application** that predicts **KCET ranks** and recommends **realistic engineering colleges** using historical cutoff data.
+An end-to-end, production-ready Machine Learning full-stack application that predicts **KCET ranks** and recommends **realistic engineering colleges** using historical cutoff data.
 
 This project mirrors how **real ML products are built, containerized, and deployed in industry**, not just how models are trained in notebooks.
 
